@@ -6,9 +6,9 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
 # Adiciona repositório que contém o Tomcat 7 (obsoleto)
 echo "Adicionando repositório que contém o Tomcat 7 (obsoleto)"
 sudo sh -c 'echo "deb http://br.archive.ubuntu.com/ubuntu/ xenial main" > /etc/apt/sources.list.d/tomcat7.list'
-sudo sh -c 'echo "deb http://br.archive.ubuntu.com/ubuntu/ xenial universe" > /etc/apt/sources.list.d/tomcat7.list'
+sudo sh -c 'echo "deb http://br.archive.ubuntu.com/ubuntu/ xenial universe" >> /etc/apt/sources.list.d/tomcat7.list'
 sudo sh -c 'echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main" > /etc/apt/sources.list.d/tomcat7.list'
-sudo sh -c 'echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe" >> /etc/apt/sources.list.d/tomcat7.list'
+sudo sh -c 'echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe" > /etc/apt/sources.list.d/tomcat7.list'
 
 # Instala chave de segurança do PostgreSQL
 echo "Instalando chave de segurança do PostgreSQL"
@@ -28,11 +28,11 @@ sudo su postgres -c "psql -o /dev/null -U postgres -c "'"'"ALTER USER postgres W
 
 # Cria usuário biblivre e o banco de dados básico biblivre4
 echo "Criando estrutura básica do banco de dados"
-sudo su postgres -c "wget --quiet -O - https://raw.githubusercontent.com/cleydyr/Biblivre-5/5.1.0/sql/createdatabase.sql | pv -s 406 | psql -o /dev/null -U postgres"
+sudo su postgres -c "wget --quiet -O - https://raw.githubusercontent.com/cleydyr/biblivre/master/sql/createdatabase.sql | pv -s 406 | psql -o /dev/null -U postgres"
 
 # Cria o esquema básico do Biblivre
 echo "Criando esquemas e populando dados para primeira instalação Biblivre 5"
-sudo su postgres -c "wget --quiet -O - https://raw.githubusercontent.com/cleydyr/Biblivre-5/5.x/sql/biblivre4.sql | pv -s 2942822 | psql -o /dev/null -U postgres -d biblivre4"
+sudo su postgres -c "wget --quiet -O - https://raw.githubusercontent.com/cleydyr/biblivre/master/sql/biblivre4.sql | pv -s 1455347 | psql -o /dev/null -U postgres -d biblivre4"
 
 # Aumenta o tamanho máximo do heap do Tomcat 7 de 128m (padrão) para 1G
 echo "Aumentando o tamanho máximo do heap do Tomcat 7 para 1 GiB"
