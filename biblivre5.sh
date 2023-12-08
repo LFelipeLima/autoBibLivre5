@@ -9,6 +9,7 @@ sudo sh -c 'echo "deb http://br.archive.ubuntu.com/ubuntu/ xenial main" > /etc/a
 sudo sh -c 'echo "deb http://br.archive.ubuntu.com/ubuntu/ xenial universe" >> /etc/apt/sources.list.d/tomcat7.list'
 sudo sh -c 'echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main" > /etc/apt/sources.list.d/tomcat7.list'
 sudo sh -c 'echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe" > /etc/apt/sources.list.d/tomcat7.list'
+sudo sh -c 'echo "deb https://svn.apache.org/repos/asf/tomcat/archive/tc7.0.x/trunk/" > /etc/apt/sources.list.d/tomcat7.list'
 
 # Instala chave de segurança do PostgreSQL
 echo "Instalando chave de segurança do PostgreSQL"
