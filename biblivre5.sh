@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Adiciona repositório que contém o PostgresSQL 9.1 (obsoleto)
 echo "Adicionando repositório que contém o PostgresSQL 9.1 (obsoleto)"
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 # Adiciona repositório que contém o Tomcat 7 (obsoleto)
 echo "Adicionando repositório que contém o Tomcat 7 (obsoleto)"
