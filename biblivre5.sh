@@ -7,8 +7,8 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main" 
 echo "Adicionando repositório que contém o Tomcat 7 (obsoleto)"
 sudo sh -c 'echo "deb http://br.archive.ubuntu.com/ubuntu/ xenial main" > /etc/apt/sources.list.d/tomcat7.list'
 sudo sh -c 'echo "deb http://br.archive.ubuntu.com/ubuntu/ xenial universe" >> /etc/apt/sources.list.d/tomcat7.list'
-sudo sh -c 'echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main" > /etc/apt/sources.list.d/tomcat7.list'
-sudo sh -c 'echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe" > /etc/apt/sources.list.d/tomcat7.list'
+sudo sh -c 'echo "deb https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat/" >> /etc/apt/sources.list.d/tomcat7.list'
+
 
 # Instala chave de segurança do PostgreSQL
 echo "Instalando chave de segurança do PostgreSQL"
