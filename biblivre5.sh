@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Adiciona repositório que contém o PostgresSQL 9.1 (obsoleto)
-echo "Adicionando repositório que contém o PostgresSQL 9.1 (obsoleto)"
+# Adiciona repositório que contém o PostgresSQL 9.5 (obsoleto)
+echo "Adicionando repositório que contém o PostgresSQL 9.5 (obsoleto)"
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 # Adiciona repositório que contém o Tomcat 7 (obsoleto)
@@ -18,9 +18,9 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 echo "Atualizando repositórios"
 sudo apt-get update
 
-# Instala pacotes PostgreSQL 9.1 e Tomcat 7 e OpenJDK 8 (opcional)
-echo "Instalando PostgreSQL 9.1, Tomcat 7 e Open JDK 8"
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql-9.1 tomcat7 openjdk-8-jdk-headless pv
+# Instala pacotes PostgreSQL 9.5 e Tomcat 7 e OpenJDK 8 (opcional)
+echo "Instalando PostgreSQL 9.5, Tomcat 7 e Open JDK 8"
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql-9.5 tomcat7 openjdk-8-jdk-headless pv
 
 # Cria a senha padrão para o usuário postgres
 echo "Criando senha padrão para o PostgreSQL"
@@ -38,9 +38,9 @@ sudo su postgres -c "wget --quiet -O - https://raw.githubusercontent.com/cleydyr
 echo "Aumentando o tamanho máximo do heap do Tomcat 7 para 1 GiB"
 sudo sed -i 's/-Xmx128m/-Xmx1G/' /etc/default/tomcat7
 
-# Baixa o driver JDBC do PostgreSQL 9.1
-echo "Baixando o driver JDBC 4 do PostgreSQL 9.1"
-sudo wget -O /usr/share/tomcat7/lib/postgresql-9.1-903.jdbc4.jar https://jdbc.postgresql.org/download/postgresql-9.1-903.jdbc4.jar
+# Baixa o driver JDBC do PostgreSQL 9.5
+echo "Baixando o driver JDBC 4 do PostgreSQL 9.5"
+sudo wget -O /usr/share/tomcat7/lib/postgresql-42.7.1.jar https://jdbc.postgresql.org/download/postgresql-42.7.1.jar
 
 # Baixa a release mais recente do repositório e implanta no Tomcat 7
 echo "Baixando e implantando a release mais recente do Biblivre 5"
