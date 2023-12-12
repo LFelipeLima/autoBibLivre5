@@ -39,7 +39,7 @@ sudo sed -i 's/-Xmx128m/-Xmx1G/' /etc/default/tomcat7
 
 # Baixa o driver JDBC do PostgreSQL 9.5
 echo "Baixando o driver JDBC 4 do PostgreSQL 9.5"
-sudo wget -O /usr/share/tomcat7/lib/postgresql-42.7.1.jar https://jdbc.postgresql.org/download/postgresql-42.7.1.jar
+sudo wget -O --no-check-certificate /usr/share/tomcat7/lib/postgresql-42.7.1.jar https://jdbc.postgresql.org/download/postgresql-42.7.1.jar
 
 # Baixa a release mais recente do repositório e implanta no Tomcat 7
 echo "Baixando e implantando a release mais recente do Biblivre 5"
